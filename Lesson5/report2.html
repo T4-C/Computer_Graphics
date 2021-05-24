@@ -10,8 +10,8 @@
     <script>
         var init =function()
         {
-            var width = 1280,
-            height = 720;
+            var width = 640,
+            height = 360;
         
             // レンダラーを作成
             var renderer = new THREE.WebGLRenderer();
@@ -29,9 +29,13 @@
             var geometry = new THREE.BoxGeometry(1, 1, 1);
             var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
             var box = new THREE.Mesh(geometry, material);
-            box.position.z = -5;
+            box.position.z = -15;
             box.position.y=-1;
             scene.add(box);
+
+            // 平面を作成
+            var geometry2 = new THREE.PlaneGeometry(1,2,3);
+            var material2 = new THREE.MeshPhongMaterial()
             
 
             /*
@@ -68,6 +72,8 @@
             // シーンに追加
             scene.add(directionalLight3);
 
+            
+
             var update = function() 
             {
                 requestAnimationFrame(update);
@@ -76,7 +82,14 @@
                 box.rotation.x += 0.01;
                 box.rotation.y += 0.01;
                 */
+
+                //　球を回転させる
+                sphere.rotation.x +=0.01;
+                sphere.rotation.z +=0.01;
                 
+                // 球を移動させる
+                sphere.position.y -=0.01
+
                 renderer.render(scene, camera);
             };
             update();
