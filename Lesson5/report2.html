@@ -10,8 +10,8 @@
     <script>
         var init =function()
         {
-            var width = 640,
-            height = 360;
+            var width = 1280,
+            height = 720;
         
             // レンダラーを作成
             var renderer = new THREE.WebGLRenderer();
@@ -23,20 +23,28 @@
         
             // カメラを作成
             var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-        
+            
+            camera.position.set(0,0,5);
             
             // 箱を作成
             var geometry = new THREE.BoxGeometry(1, 1, 1);
             var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
             var box = new THREE.Mesh(geometry, material);
+            box.position.set(-10,-5,-15);
+            /*
             box.position.z = -15;
-            box.position.y=-1;
-            scene.add(box);
+            box.position.x =-10;
+            box.position.y=-5;
+            */
+            //scene.add(box);
 
             // 平面を作成
-            var geometry2 = new THREE.PlaneGeometry(1,2,3);
-            var material2 = new THREE.MeshPhongMaterial()
-            
+            var geometry2 = new THREE.PlaneGeometry(10,5,3);
+            var material2 = new THREE.MeshPhongMaterial({color:0x0000ff,side:THREE.DoubleSide});
+            var plane =new THREE.Mesh(geometry2,material2);
+            plane.position.z -=10;
+            plane.rotation.y -=0.1;
+            scene.add(plane);            
 
             /*
             // 角柱～円柱
@@ -51,7 +59,7 @@
             //半径、垂直方向の分割数、水平方向の分割数
             var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff,wireframe: true} );
             var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
-            sphere.position.set( 0, 0, -5 );
+            sphere.position.set( -10,-5,-15 );
             scene.add( sphere );
 
             // 平行光源
@@ -72,11 +80,23 @@
             // シーンに追加
             scene.add(directionalLight3);
 
-            
-
+            var spownSphere = function()
+            {
+                    var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
+                    //半径、垂直方向の分割数、水平方向の分割数
+                    var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff,wireframe: true} );
+                    var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+                    sphere.position.set( -10,-5,-15 );
+                    scene.add( sphere );
+            }
             var update = function() 
             {
                 requestAnimationFrame(update);
+                for(var i =0;i<3;i++)
+                {
+                        //spownSphere();
+                }
+                
                 /*
                 // 箱を回転させる
                 box.rotation.x += 0.01;
@@ -88,7 +108,8 @@
                 sphere.rotation.z +=0.01;
                 
                 // 球を移動させる
-                sphere.position.y -=0.01
+                sphere.position.y +=0.01;
+                sphere.position.z -=0.05;
 
                 renderer.render(scene, camera);
             };
