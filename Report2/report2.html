@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample2</title>
+
+  <!-- three.jsを読み込む(ローカル) -->
+  <!-- <script src="./three.js"></script> -->
+  <!-- three.jsを読み込む(CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+
+</head>
+<body>
+ <script>
+  var init = function() {
+
+    var width = 800,
+        height = 600;
+  
+    // レンダラーを作成
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(width, height);
+    document.body.appendChild(renderer.domElement);
+  
+    // シーンを作成
+    var scene = new THREE.Scene();
+  
+    // カメラを作成
+    var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+  
+    // 箱を作成
+    var geometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
+    // 青
+    var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+    // 赤
+    var material2 = new THREE.MeshPhongMaterial({ color: 0xff0000 });
+    //白
+    var material3 = new THREE.MeshPhongMaterial({ color: 0xffffff });
+    // 緑
+    var material4 = new THREE.MeshPhongMaterial({ color: 0x008000 });
+    // 黄
+    var material5 = new THREE.MeshPhongMaterial({ color: 0xffff00 });
+    // ピンク
+    var material6 = new THREE.MeshPhongMaterial({ color: 0xffc0cb });
+    var box1 = new THREE.Mesh(geometry, material5);
+    box1.position.set(0.3,0,0);
+    //scene.add(box1);
+    //
+    var box2 = new THREE.Mesh(geometry, material5);
+    box2.position.set(0.9,0,0);
+    //scene.add(box2);
+    //
+    var box3 = new THREE.Mesh(geometry, material);
+    box3.position.set(-0.3,0,0);
+    //scene.add(box3);
+    //
+    var box4 = new THREE.Mesh(geometry, material);
+    box4.position.set(-0.9,0,0);
+    //scene.add(box4);
+    //横方向に並べる
+    var box5 = new THREE.Mesh(geometry, material2);
+    box5.position.set(0,0,0);
+
+    var box6 = new THREE.Mesh(geometry, material2);
+    box6.position.set(0,0.5,0);
+
+    //3
+    var box7 = new THREE.Mesh(geometry, material2);
+    box7.position.set(0,0,0);
+
+    var box8 = new THREE.Mesh(geometry, material2);
+    box8.position.set(0,0.5,0);
+
+    // 4
+    var box9 = new THREE.Mesh(geometry, material);
+    box9.position.set(0,0,0);
+
+    var box10 = new THREE.Mesh(geometry, material);
+    box10.position.set(0,0.5,0);
+
+    // 5 ただのbox
+    var box11 = new THREE.Mesh(geometry, material3);
+    box11.position.set(-2,0,-5);
+    box11.scale.set(0.5,0.5,0.5);
+    scene.add(box11);
+
+    // 6　ただのbox
+    var box12 = new THREE.Mesh(geometry, material4);
+    box12.position.set(-2,-0.5,-5);
+    box12.scale.set(0.5,0.5,0.5);
+    scene.add(box12);
+
+    // 7　ただのbox
+    var box13 = new THREE.Mesh(geometry, material6);
+    box13.position.set(-2,-1.5,-5);
+    box13.scale.set(0.5,0.5,0.5);
+    scene.add(box13);
+
+
+     //全体のオブジェクト1
+    //const all = new THREE.Object3D(); 
+    const all = new THREE.Group();
+    all.add(box1); // 箱1を追加 
+    all.add(box2); // 箱2を追加 
+    /*
+    all.add(box3); // 箱3を追加 
+    all.add(box4); // 箱4を追加 
+    */
+    all.position.set(-2,-1.5,-5);//箱1～4のグループの原点の位置
+    all.rotation.z=(0.5*Math.PI);
+    all.scale.set(0.5,0.5,0.5);
+    scene.add(all);
+
+     //全体のオブジェクト2
+    //const all = new THREE.Object3D(); 
+    const all2 = new THREE.Group();
+    all2.add(box5); // 箱1を追加 
+    all2.add(box6); // 箱2を追加 
+   
+    all2.position.set(-0.5,-1,-5);//箱1～4のグループの原点の位置
+    //all.rotation.z=(0.5*Math.PI);
+    all2.scale.set(0.5,0.5,0.5);
+    //scene.add(all2);
+    
+     //全体のオブジェクト3
+    //const all = new THREE.Object3D(); 
+    const all3 = new THREE.Group();
+    all3.add(box7); // 箱1を追加 
+    all3.add(box8); // 箱2を追加 
+   
+    all3.position.set(-2,1.5,-5);//箱1～4のグループの原点の位置
+    //all.rotation.z=(0.5*Math.PI);
+    all3.scale.set(0.5,0.5,0.5);
+    scene.add(all3);
+
+     //全体のオブジェクト4
+    //const all = new THREE.Object3D(); 
+    const all4 = new THREE.Group();
+    all4.add(box9); // 箱1を追加 
+    all4.add(box10); // 箱2を追加 
+   
+    all4.position.set(-2,0.5,-5);//箱1～4のグループの原点の位置
+    //all.rotation.z=(0.5*Math.PI);
+    all4.scale.set(0.5,0.5,0.5);
+    scene.add(all4);
+
+   
+     
+  
+    // 平行光源1
+    var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+    directionalLight1.position.set(1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight1);
+    // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+    directionalLight2.position.set(-1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight2);
+  
+    // 初回実行
+    var update = function() {
+      requestAnimationFrame(update);
+  
+      // 箱を回転させる
+      /*
+      box1.rotation.x += 0.01;
+      box1.rotation.y += 0.01;
+      //box2.rotation.x += 0.01;
+      //box2.rotation.y += 0.01;
+      box3.rotation.x += 0.01;
+      box3.rotation.y += 0.01;
+      //box4.rotation.x += 0.01;
+      //box4.rotation.y += 0.01;
+        //all.rotation.x += 0.01;
+        
+        //all.rotation.y += 0.01;
+*/
+        //all.position.x+=0.01;
+        box1.position.x+=0.01;
+        box6.position.x+=0.01;
+
+        all3.position.x+=0.01;
+        box8.position.x+=0.01;
+        
+        all4.position.x+=0.01;
+        box10.position.x-=0.01;
+
+        box11.position.x+=0.01;
+
+        box12.position.x+=0.01;
+        box12.position.x-=0.01;
+        
+        box13.position.x+=0.02;
+  
+      renderer.render(scene, camera);
+    };
+    update();
+  }
+  window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
