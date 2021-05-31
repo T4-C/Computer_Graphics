@@ -30,12 +30,12 @@
 
    // テクスチャー読み込み
    var textureLoader = new THREE.TextureLoader();  
-  var texture = textureLoader.load("ashalt.jpg");
+  var texture = textureLoader.load("apshalt.jpg");
   var mat = new THREE.MeshPhongMaterial();
   mat.map = texture;
   
   // バンプマップ読み込み
-  var bump = textureLoader.load("ashalt_bump.jpg");
+  var bump = textureLoader.load("asphalt_bump.jpg");
   mat.bumpMap = bump;
   mat.bumpscale = 0.2;
 
