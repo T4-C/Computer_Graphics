@@ -30,7 +30,7 @@
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
     
   // カメラの初期座標を設定
-  camera.position.set(0, 0, 0);
+  camera.position.set(0, 0, 10);
 
   // カメラコントローラーを作成
   const controls = new THREE.OrbitControls(camera,document.body);
@@ -44,19 +44,19 @@ var textureLoader = new THREE.TextureLoader();
   // 箱を作成
   var geometry1 = new THREE.BoxGeometry(1, 1, 1);
   var box = new THREE.Mesh(geometry1, mat);
-  box.position.set(1.5,0,-5);
+  box.position.set(1.5,0,0);
   scene.add(box);
 
   // 球を作成
   var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
   var Sphere = new THREE.Mesh(geometry2, mat);
-  Sphere.position.set(0,0,-5);
+  Sphere.position.set(0,0,0);
   scene.add(Sphere);
 
   // 円柱を作成
   var geometry3 = new THREE.CylinderGeometry( 0, 0.5, 1, 20, 4 );
   var Cylinder = new THREE.Mesh(geometry3, mat);
-  Cylinder.position.set(-1.5,0,-5);
+  Cylinder.position.set(-1.5,0,0);
   scene.add(Cylinder);
 
   // 平行光源
