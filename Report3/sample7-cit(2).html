@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>sample_Mapping2</title>
+
+
+  <!-- three.jsを読み込む(ローカル) -->
+  <!-- <script src="./three.js"></script> -->
+  <!-- three.jsを読み込む(CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+  <script src="OrbitControls.js"></script>
+</head>
+<body>
+ <script>
+  var init = function() {
+
+    var width = 800,
+        height = 600;
+  
+    // レンダラーを作成
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(width, height);
+    document.body.appendChild(renderer.domElement);
+
+    // 背景色を設定
+    renderer.setClearColor(0xeeeeff);
+  
+    // シーンを作成
+    var scene = new THREE.Scene();
+  
+    // カメラを作成
+  var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+    
+  // カメラの初期座標を設定
+  camera.position.set(0, 0, 10);
+
+  // カメラコントローラーを作成
+  const controls = new THREE.OrbitControls(camera,document.body);
+
+// テクスチャー読み込み
+var textureLoader = new THREE.TextureLoader();  
+  var texture = textureLoader.load("water01.jpg");
+  var mat = new THREE.MeshPhongMaterial();
+  mat.map = texture;
+
+  // 平面を作成
+  var geometry = new THREE.PlaneGeometry( 1, 2, 3 );
+  var material = new THREE.MeshPhongMaterial( {color: 0x0000ff, side: THREE.DoubleSide} );
+
+  var plane = new THREE.Mesh( geometry, material );
+  //plane.position.z = -5;
+  scene.add( plane );
+
+  // 箱を作成
+  var geometry1 = new THREE.BoxGeometry(1, 1, 1);
+  var box = new THREE.Mesh(geometry1, mat);
+  box.position.set(1.5,0,0);
+  scene.add(box);
+
+  
+
+  // 平行光源
+  var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+  directionalLight1.position.set(1, 1, 1);
+  // シーンに追加
+  scene.add(directionalLight1);
+
+  var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+  directionalLight2.position.set(-10, 1, 1);
+  // シーンに追加
+  scene.add(directionalLight2);
+
+ var directionalLight3 = new THREE.DirectionalLight(0xffffff);
+  directionalLight3.position.set(1, -10, 1);
+  // シーンに追加
+  scene.add(directionalLight3);
+
+  // helper
+  const gridHelper = new THREE.GridHelper(5,50); // size, step
+      scene.add(gridHelper);
+
+      const axisHelper = new THREE.AxisHelper(200,50);
+      scene.add(axisHelper);
+    
+    // 木0をスプライトで作成
+    var textureLoader = new THREE.TextureLoader();  
+    var texture0 = textureLoader.load("img/tree0.png");
+    const material0 = new THREE.SpriteMaterial({ map: texture0,});
+
+    const sprite0 = new THREE.Sprite(material0);
+    sprite0.position.x = 0;
+    sprite0.position.y = 0;
+    sprite0.position.z = -1;
+    sprite0.scale.set(1,1,1);
+    scene.add(sprite0);
+
+  // 初回実行
+  var update = function() {
+    requestAnimationFrame(update);
+
+    
+
+    renderer.render(scene, camera);
+  };
+  update();
+
+  tick();
+
+    // 毎フレーム時に実行されるループイベントです
+    function tick() {
+      // レンダリング
+      renderer.render(scene, camera);
+      requestAnimationFrame(tick);
+    }
+}
+  window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
