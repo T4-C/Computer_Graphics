@@ -55,25 +55,25 @@ var textureLoader = new THREE.TextureLoader();
   // 箱を作成
   var geometry1 = new THREE.BoxGeometry(1, 1, 1);
   var box1 = new THREE.Mesh(geometry1, mat);
-  box.position.set(1,0,1);
+  box1.position.set(1,0,1);
   scene.add(box1);
 
   // 箱を作成
   var geometry2 = new THREE.BoxGeometry(1, 1, 1);
-  var box2 = new THREE.Mesh(geometry1, mat);
-  box.position.set(1,0,-1);
+  var box2 = new THREE.Mesh(geometry2, mat);
+  box2.position.set(1,0,-1);
   scene.add(box2);
 
   // 箱を作成
   var geometry3 = new THREE.BoxGeometry(1, 1, 1);
-  var box3 = new THREE.Mesh(geometry1, mat);
-  box.position.set(-1,0,1);
+  var box3 = new THREE.Mesh(geometry3, mat);
+  box3.position.set(-1,0,1);
   scene.add(box3);
 
   // 箱を作成
   var geometry4 = new THREE.BoxGeometry(1, 1, 1);
-  var box4 = new THREE.Mesh(geometry1, mat);
-  box.position.set(-1,0,-1);
+  var box4 = new THREE.Mesh(geometry4, mat);
+  box4.position.set(-1,0,-1);
   scene.add(box4);
   
 
