@@ -51,7 +51,7 @@ var textureLoader = new THREE.TextureLoader();
   var mat2 = new THREE.MeshPhongMaterial();
   mat2.map = texture2;
   // 平面を作成
-  var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
+  var geometry = new THREE.PlaneGeometry( 10, 10, 10 );
   var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
   material.map=texture2;
   var plane = new THREE.Mesh( geometry, material );
