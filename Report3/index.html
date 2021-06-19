@@ -41,8 +41,9 @@
 // テクスチャー読み込み
 var textureLoader = new THREE.TextureLoader();  
   var texture = textureLoader.load("img/house.jpg");
+  var texture3 =textureLoader.load("img/stone_gray.jpg");
   var mat = new THREE.MeshPhongMaterial();
-  mat.map = texture;
+  mat.map = texture3;
 
   
   //　レンガのテクスチャ読み込み
@@ -51,7 +52,7 @@ var textureLoader = new THREE.TextureLoader();
   var mat2 = new THREE.MeshPhongMaterial();
   mat2.map = texture2;
   // 平面を作成
-  var geometry = new THREE.PlaneGeometry( 10, 10, 10 );
+  var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
   var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
   material.map=texture2;
   var plane = new THREE.Mesh( geometry, material );
