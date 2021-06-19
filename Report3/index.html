@@ -63,20 +63,20 @@ var textureLoader = new THREE.TextureLoader();
   
   scene.add( plane0 );
   // 平面を作成
-  //var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
+  var geometryA = new THREE.PlaneGeometry( 1, 1, 1 );
   
   material.map=texture3;
-  var plane = new THREE.Mesh( geometry, material );
+  var plane = new THREE.Mesh( geometryA, material );
   //plane.position.z = -5;
   plane.rotation.x=Math.PI/2;
   plane.position.set(0,0.01,0);
   scene.add( plane );
 
   // 平面を作成
-  //var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
+  var geometryA = new THREE.PlaneGeometry( 1, 1, 1 );
   
   material.map=texture3;
-  var plane2 = new THREE.Mesh( geometry, material );
+  var plane2 = new THREE.Mesh( geometryA, material );
   //plane.position.z = -5;
   plane2.rotation.x=Math.PI/2;
   plane2.position.set(1,0.01,0);
