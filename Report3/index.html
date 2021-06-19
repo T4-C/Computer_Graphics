@@ -69,7 +69,7 @@ var textureLoader = new THREE.TextureLoader();
   var plane = new THREE.Mesh( geometry, material );
   //plane.position.z = -5;
   plane.rotation.x=Math.PI/2;
-  plane.rotation.y=0.01;
+  plane.position.set(0,0.01,0);
   scene.add( plane );
 
   // 平面を作成
