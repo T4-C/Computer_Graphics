@@ -88,7 +88,7 @@ var textureLoader = new THREE.TextureLoader();
   //var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
   var cone = new THREE.Mesh( coneGeometry, mat2 );
   cone.position.set( 1, 1.5, 1 );
-
+  cone.rotation.x=45*Math.PI;
   scene.add( cone );
 
   //角すい〜円すい
