@@ -43,7 +43,11 @@ var textureLoader = new THREE.TextureLoader();
   var texture = textureLoader.load("water01.jpg");
   var mat = new THREE.MeshPhongMaterial();
   mat.map = texture;
-
+  //　レンガのテクスチャ読み込み
+   
+  var texture2 = textureLoader.load("stone_00081.jpg");
+  var mat2 = new THREE.MeshPhongMaterial();
+  mat.map = texture2;
   // 平面を作成
   var geometry = new THREE.PlaneGeometry( 1, 2, 3 );
   var material = new THREE.MeshPhongMaterial( {color: 0x0000ff, side: THREE.DoubleSide} );
@@ -80,7 +84,7 @@ var textureLoader = new THREE.TextureLoader();
   var coneGeometry = new THREE.ConeGeometry( 1, 1, 4 ); 
 
   var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
-  var cone = new THREE.Mesh( coneGeometry, coneMaterial );
+  var cone = new THREE.Mesh( coneGeometry, mat2 );
   cone.position.set( 1, 1.5, 1 );
 
   scene.add( cone );
@@ -89,7 +93,7 @@ var textureLoader = new THREE.TextureLoader();
   var coneGeometry2 = new THREE.ConeGeometry( 1, 1, 4 ); 
 
   
-  var cone2 = new THREE.Mesh( coneGeometry2, coneMaterial );
+  var cone2 = new THREE.Mesh( coneGeometry2, mat2 );
   cone2.position.set( 1, 1.5, -1 );
 
   scene.add( cone2 );
