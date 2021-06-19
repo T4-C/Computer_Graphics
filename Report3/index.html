@@ -40,12 +40,14 @@
 
 // テクスチャー読み込み
 var textureLoader = new THREE.TextureLoader();  
-  var texture = textureLoader.load("water01.jpg");
+  var texture = textureLoader.load("img/water01.jpg");
   var mat = new THREE.MeshPhongMaterial();
   mat.map = texture;
+
+  
   //　レンガのテクスチャ読み込み
   var textureLoader2 = new THREE.TextureLoader();  
-  var texture2 = textureLoader2.load("stone_00081.jpg");
+  var texture2 = textureLoader2.load("img/stone_00081.jpg");
   var mat2 = new THREE.MeshPhongMaterial();
   mat.map = texture2;
   // 平面を作成
@@ -83,7 +85,7 @@ var textureLoader = new THREE.TextureLoader();
  //角すい〜円すい
   var coneGeometry = new THREE.ConeGeometry( 1, 1, 4 ); 
 
-  var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
+  //var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
   var cone = new THREE.Mesh( coneGeometry, mat2 );
   cone.position.set( 1, 1.5, 1 );
 
@@ -92,7 +94,6 @@ var textureLoader = new THREE.TextureLoader();
   //角すい〜円すい
   var coneGeometry2 = new THREE.ConeGeometry( 1, 1, 4 ); 
 
-  
   var cone2 = new THREE.Mesh( coneGeometry2, mat2 );
   cone2.position.set( 1, 1.5, -1 );
 
@@ -123,7 +124,7 @@ var textureLoader = new THREE.TextureLoader();
       scene.add(axisHelper);
     
     // 木0をスプライトで作成
-    var textureLoader = new THREE.TextureLoader();  
+    //var textureLoader = new THREE.TextureLoader();  
     var texture0 = textureLoader.load("img/tree0.png");
     const material0 = new THREE.SpriteMaterial({ map: texture0,});
 
