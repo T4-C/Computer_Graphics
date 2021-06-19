@@ -43,8 +43,9 @@ var textureLoader = new THREE.TextureLoader();
   var texture = textureLoader.load("img/house.jpg");
   var texture3 =textureLoader.load("img/stone_gray.jpg");
   var mat = new THREE.MeshPhongMaterial();
-  mat.map = texture3;
-
+  var mat3 = new THREE.MeshPhongMaterial();
+  mat.map = texture;
+  mat3.map=texture3;
   
   //　レンガのテクスチャ読み込み
   var textureLoader = new THREE.TextureLoader();  
