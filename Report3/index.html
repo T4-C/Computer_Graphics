@@ -52,9 +52,19 @@ var textureLoader = new THREE.TextureLoader();
   var texture2 = textureLoader.load("img/stone_00081.jpg");
   var mat2 = new THREE.MeshPhongMaterial();
   mat2.map = texture2;
+
   // 平面を作成
-  var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
+  var geometry = new THREE.PlaneGeometry( 10, 10, 1 );
   var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
+  material.map=texture3;
+  var plane0 = new THREE.Mesh( geometry, material );
+  //plane.position.z = -5;
+  plane0.rotation.x=Math.PI/2;
+  plane0.rotation.y=0.01;
+  scene.add( plane0 );
+  // 平面を作成
+  //var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
+  
   material.map=texture3;
   var plane = new THREE.Mesh( geometry, material );
   //plane.position.z = -5;
@@ -63,8 +73,8 @@ var textureLoader = new THREE.TextureLoader();
   scene.add( plane );
 
   // 平面を作成
-  var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
-  var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
+  //var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
+  
   material.map=texture3;
   var plane2 = new THREE.Mesh( geometry, material );
   //plane.position.z = -5;
