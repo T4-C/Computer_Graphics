@@ -142,14 +142,14 @@ var textureLoader = new THREE.TextureLoader();
     
     // 木0をスプライトで作成
     //var textureLoader = new THREE.TextureLoader();  
-    var texture0 = textureLoader.load("img/chara.png");
+    var texture0 = textureLoader.load("img/chara.jpg");
     const material0 = new THREE.SpriteMaterial({ map: texture0,});
 
     const sprite0 = new THREE.Sprite(material0);
     sprite0.position.x = 0;
     sprite0.position.y = 0;
     sprite0.position.z = -1;
-    sprite0.scale.set(1000,1000,10000);
+    sprite0.scale.set(1,1,1);
     scene.add(sprite0);
 
   // 初回実行
