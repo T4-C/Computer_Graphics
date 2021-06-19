@@ -62,7 +62,7 @@ var textureLoader = new THREE.TextureLoader();
   // 箱を作成
   var geometry1 = new THREE.BoxGeometry(1, 1, 1);
   var box1 = new THREE.Mesh(geometry1, mat);
-  box1.position.set(1,0.5,1);
+  box1.position.set(1.5,0.5,1.5);
   scene.add(box1);
 
   // 箱を作成
@@ -88,7 +88,7 @@ var textureLoader = new THREE.TextureLoader();
 
   //var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
   var cone = new THREE.Mesh( coneGeometry, mat2 );
-  cone.position.set( 1, 1.5, 1 );
+  cone.position.set( 1.5, 1.5, 1.5 );
   cone.rotation.y=Math.PI/4;
   scene.add( cone );
 
@@ -96,9 +96,25 @@ var textureLoader = new THREE.TextureLoader();
   var coneGeometry2 = new THREE.ConeGeometry( 1, 1, 4 ); 
 
   var cone2 = new THREE.Mesh( coneGeometry2, mat2 );
-  cone2.position.set( 1, 1.5, -1 );
+  cone2.position.set( 1.5, 1.5, -1.5 );
   cone2.rotation.y=Math.PI/4;
   scene.add( cone2 );
+
+  //角すい〜円すい
+  var coneGeometry3 = new THREE.ConeGeometry( 1, 1, 4 ); 
+
+  var cone3 = new THREE.Mesh( coneGeometry3, mat2 );
+  cone3.position.set( -1.5, 1.5, 1.5 );
+  cone3.rotation.y=Math.PI/4;
+  scene.add( cone3 );
+
+  //角すい〜円すい
+  var coneGeometry4 = new THREE.ConeGeometry( 1, 1, 4 ); 
+
+  var cone4 = new THREE.Mesh( coneGeometry3, mat2 );
+  cone4.position.set( -1.5, 1.5, -1.5 );
+  cone4.rotation.y=Math.PI/4;
+  scene.add( cone4 );
 
 
   // 平行光源
