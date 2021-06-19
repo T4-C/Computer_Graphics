@@ -101,6 +101,14 @@ var textureLoader = new THREE.TextureLoader();
   plane4.position.set(-1,0.01,0);
   scene.add( plane4 );
 
+  // 道を作成
+  material.map=texture3;
+  var plane4 = new THREE.Mesh( geometryA, material );
+  //plane.position.z = -5;
+  plane4.rotation.x=Math.PI/2;
+  plane4.position.set(-2,0.01,0);
+  scene.add( plane4 );
+
   // 箱を作成
   var geometry1 = new THREE.BoxGeometry(1, 1, 1);
   var box1 = new THREE.Mesh(geometry1, mat);
