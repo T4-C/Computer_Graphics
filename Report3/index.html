@@ -46,10 +46,10 @@ var textureLoader = new THREE.TextureLoader();
 
   
   //　レンガのテクスチャ読み込み
-  var textureLoader2 = new THREE.TextureLoader();  
-  var texture2 = textureLoader2.load("img/stone_00081.jpg");
+  var textureLoader = new THREE.TextureLoader();  
+  var texture2 = textureLoader.load("img/stone_00081.jpg");
   var mat2 = new THREE.MeshPhongMaterial();
-  mat.map = texture2;
+  mat2.map = texture2;
   // 平面を作成
   var geometry = new THREE.PlaneGeometry( 1, 2, 3 );
   var material = new THREE.MeshPhongMaterial( {color: 0x0000ff, side: THREE.DoubleSide} );
