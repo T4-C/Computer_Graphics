@@ -58,16 +58,16 @@ var textureLoader = new THREE.TextureLoader();
 
   // 平面を作成
   var geometry = new THREE.PlaneGeometry( 5, 5, 1 );
-  var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
-  material.map=texture4;
-  var plane0 = new THREE.Mesh( geometry, material );
+  var material4 = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
+  material4.map=texture4;
+  var plane0 = new THREE.Mesh( geometry, material4 );
   //plane.position.z = -5;
   plane0.rotation.x=Math.PI/2;
   
   scene.add( plane0 );
   // 平面を作成
   var geometryA = new THREE.PlaneGeometry( 1, 1, 1 );
-  
+  var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
   material.map=texture3;
   var plane = new THREE.Mesh( geometryA, material );
   //plane.position.z = -5;
