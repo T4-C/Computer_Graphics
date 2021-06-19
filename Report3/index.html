@@ -51,7 +51,7 @@ var textureLoader = new THREE.TextureLoader();
   var mat2 = new THREE.MeshPhongMaterial();
   mat2.map = texture2;
   // 平面を作成
-  var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
+  var geometry = new THREE.PlaneGeometry( 10, 10, 1 );
   var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
   material.map=texture2;
   var plane = new THREE.Mesh( geometry, material );
@@ -157,10 +157,10 @@ var textureLoader = new THREE.TextureLoader();
     const material1 = new THREE.SpriteMaterial({ map: texture0,transparent: true});
 
     const sprite1 = new THREE.Sprite(material1);
-    sprite0.position.x = 1;
-    sprite0.position.y = 0.5;
-    sprite0.position.z = 0;
-    sprite0.scale.set(1,1,1);
+    sprite1.position.x = 1;
+    sprite1.position.y = 0.5;
+    sprite1.position.z = 0;
+    sprite1.scale.set(1,1,1);
     scene.add(sprite1);
 
   // 初回実行
