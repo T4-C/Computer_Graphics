@@ -55,11 +55,21 @@ var textureLoader = new THREE.TextureLoader();
   // 平面を作成
   var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
   var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
-  material.map=texture2;
+  material.map=texture3;
   var plane = new THREE.Mesh( geometry, material );
   //plane.position.z = -5;
   plane.rotation.x=Math.PI/2;
   scene.add( plane );
+
+  // 平面を作成
+  var geometry = new THREE.PlaneGeometry( 1, 1, 1 );
+  var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
+  material.map=texture3;
+  var plane2 = new THREE.Mesh( geometry, material );
+  //plane.position.z = -5;
+  plane2.rotation.x=Math.PI/2;
+  scene.add( plane2 );
+  plane2.position.set(1,0,0);
 
   // 箱を作成
   var geometry1 = new THREE.BoxGeometry(1, 1, 1);
