@@ -44,8 +44,8 @@ var textureLoader = new THREE.TextureLoader();
   var mat = new THREE.MeshPhongMaterial();
   mat.map = texture;
   //　レンガのテクスチャ読み込み
-   
-  var texture2 = textureLoader.load("stone_00081.jpg");
+  var textureLoader2 = new THREE.TextureLoader();  
+  var texture2 = textureLoader2.load("stone_00081.jpg");
   var mat2 = new THREE.MeshPhongMaterial();
   mat.map = texture2;
   // 平面を作成
