@@ -109,6 +109,43 @@ var textureLoader = new THREE.TextureLoader();
   plane4.position.set(-2,0.01,0);
   scene.add( plane4 );
 
+  // 道を作成
+  material.map=texture3;
+  var plane5 = new THREE.Mesh( geometryA, material );
+  //plane.position.z = -5;
+  plane5.rotation.x=Math.PI/2;
+  plane5.position.set(-2,0.01,0);
+  scene.add( plane5 );
+
+  // 道を作成
+  material.map=texture3;
+  var plane6 = new THREE.Mesh( geometryA, material );
+  plane6.rotation.x=Math.PI/2;
+  plane6.position.set(0,0.01,1);
+  scene.add( plane6 );
+
+  // 道を作成
+  material.map=texture3;
+  var plane7 = new THREE.Mesh( geometryA, material );
+  //plane.position.z = -5;
+  plane7.rotation.x=Math.PI/2;
+  plane7.position.set(0,0.01,2);
+  scene.add( plane7 );
+
+  // 道を作成
+  material.map=texture3;
+  var plane8 = new THREE.Mesh( geometryA, material );
+  plane8.rotation.x=Math.PI/2;
+  plane8.position.set(0,0.01,-1);
+  scene.add( plane8 );
+  
+  // 道を作成
+  material.map=texture3;
+  var plane9 = new THREE.Mesh( geometryA, material );
+  plane9.rotation.x=Math.PI/2;
+  plane9.position.set(0,0.01,-2);
+  scene.add( plane9 );
+
   // 箱を作成
   var geometry1 = new THREE.BoxGeometry(1, 1, 1);
   var box1 = new THREE.Mesh(geometry1, mat);
