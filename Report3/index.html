@@ -42,21 +42,24 @@
 var textureLoader = new THREE.TextureLoader();  
   var texture = textureLoader.load("img/house.jpg");
   var texture3 =textureLoader.load("img/stone_gray.jpg");
+  var texture4 =textureLoader.load("img/p0305.jpg");
   var mat = new THREE.MeshPhongMaterial();
   var mat3 = new THREE.MeshPhongMaterial();
+  var mat4 = new THREE.MeshPhongMaterial();
   mat.map = texture;
   mat3.map=texture3;
-  
+  mat4.map=texture4;
+
   //　レンガのテクスチャ読み込み
-  var textureLoader = new THREE.TextureLoader();  
+  //var textureLoader = new THREE.TextureLoader();  
   var texture2 = textureLoader.load("img/stone_00081.jpg");
   var mat2 = new THREE.MeshPhongMaterial();
   mat2.map = texture2;
 
   // 平面を作成
-  var geometry = new THREE.PlaneGeometry( 10, 10, 1 );
+  var geometry = new THREE.PlaneGeometry( 5, 5, 1 );
   var material = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
-  material.map=texture3;
+  material.map=texture4;
   var plane0 = new THREE.Mesh( geometry, material );
   //plane.position.z = -5;
   plane0.rotation.x=Math.PI/2;
