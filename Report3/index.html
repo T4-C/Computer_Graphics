@@ -61,7 +61,7 @@ var textureLoader = new THREE.TextureLoader();
   var material4 = new THREE.MeshPhongMaterial( { side: THREE.DoubleSide} );
   material4.map=texture4;
   var plane0 = new THREE.Mesh( geometry, material4 );
-  //plane.position.z = -5;
+  plane.position.z = -0.01;
   plane0.rotation.x=Math.PI/2;
   
   scene.add( plane0 );
