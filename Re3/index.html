@@ -267,6 +267,8 @@ var textureLoader = new THREE.TextureLoader();
       // レンダリング
       renderer.render(scene, camera);
       requestAnimationFrame(tick);
+      sprite0.position.x+=0.01;
+
     }
 }
   window.addEventListener('DOMContentLoaded', init);
