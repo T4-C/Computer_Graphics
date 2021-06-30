@@ -268,8 +268,8 @@ var textureLoader = new THREE.TextureLoader();
       renderer.render(scene, camera);
       requestAnimationFrame(tick);
       sprite0.position.z+=0.01;
-      if(sprite0.position.z<=5){
-        sprite0.position.z=-5;
+      if(sprite0.position.z>=2){
+        sprite0.position.z=-2;
       }
     }
 }
